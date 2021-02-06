@@ -15,6 +15,7 @@ from userbot import (
     AFKREASON,
     COUNT_MSG,
     CMD_HELP,
+    ALIVE_NAME,
     ISAFK,
     BOTLOG,
     BOTLOG_CHATID,
@@ -25,11 +26,11 @@ from userbot.events import register
 
 # ========================= CONSTANTS ============================
 AFKSTR = [
-       "#AFK\n Maaf Boss Saya Sedang OFFLINE!!",
-    "#AFK\n Maaf Boss Saya Sedang OFFLINE\n Tolong Jangan Ganggu Saya!!",
-    "#AFK\n Saya Sedang OFFLINE\n Jangan Ganggu Saya !!!!!",
-    "#AFK\n Maaf Boss Saya Sedang OFFLINE!!",
-    "#AFK\n Saya Lagi OFFLINE Tunggu Sampai Saya Online lagi",
+       f"AFK\n Maaf {ALIVE_NAME} Sedang OFFLINE!!",
+    f"AFK\n Maaf Boss {ALIVE_NAME} Sedang OFFLINE\n Tunggu Sampai {ALIVE_NAME} Kembali Online!!",
+    f"AFK\n {ALIVE_NAME} Sedang OFFLINE\n Jangan Ganggu !!!!!",
+    f"AFK\n Maaf Boss Saya Sedang OFFLINE!!",
+    f"AFK\n {ALIVE_NAME} Lagi OFFLINE Tunggu Sampai {ALIVE_NAME} Online lagi",
 ]
 
 global USER_AFK  # pylint:disable=E0602
@@ -67,7 +68,7 @@ async def set_afk(afk_e):
         \nKarena: `{string}`"
         )
     else:
-        await afk_e.edit("Saya Afk Dulu")
+        await afk_e.edit("`Saya Afk Dulu`")
     if BOTLOG:
         await afk_e.client.send_message(BOTLOG_CHATID, "#AFK\nKamu Sekarang AFK!")
     ISAFK = True
@@ -158,11 +159,11 @@ async def mention_afk(mention):
                 wday = now + datetime.timedelta(days=-days)
                 afk_since = wday.strftime("%A")
         elif hours > 1:
-            afk_since = f"`{int(hours)}h{int(minutes)}m` ago"
+            afk_since = f"`{int(hours)} Jam {int(minutes)} Menit`"
         elif minutes > 0:
-            afk_since = f"`{int(minutes)}m{int(seconds)}s` ago"
+            afk_since = f"`{int(minutes)} Menit {int(seconds)} Detik`"
         else:
-            afk_since = f"`{int(seconds)}s` ago"
+            afk_since = f"`{int(seconds)} Detik`"
 
         is_bot = False
         if (sender := await mention.get_sender()):
@@ -189,7 +190,7 @@ async def mention_afk(mention):
             if USERS[mention.sender_id] % randint(2, 4) == 0:
                 if AFKREASON:
                     await mention.reply(
-                        f"Saya Masih OFFLINE since {afk_since}.\
+                        f"`{ALIVE_NAME} Masih OFFLINE` {afk_since}.\
                             \nKarena: `{AFKREASON}`"
                     )
                 else:
@@ -254,15 +255,15 @@ async def afk_on_pm(sender):
                     wday = now + datetime.timedelta(days=-days)
                     afk_since = wday.strftime("%A")
             elif hours > 1:
-                afk_since = f"`{int(hours)}Jam{int(minutes)}Mnt"
+                afk_since = f"`{int(hours)} Jam {int(minutes)} Menit"
             elif minutes > 0:
-                afk_since = f"`{int(minutes)}mnt{int(seconds)}dtk"
+                afk_since = f"`{int(minutes)} Menit {int(seconds)} Detik"
             else:
-                afk_since = f"`{int(seconds)}dtk"
+                afk_since = f"`{int(seconds)}Detik"
             if sender.sender_id not in USERS:
                 if AFKREASON:
                     await sender.reply(
-                        f"Maaf Saya Lagi OFFLINE Sejak {afk_since}.\
+                        f"`Maaf {ALIVE_NAME} Lagi OFFLINE Sejak` {afk_since}.\
                         \nKarena: `{AFKREASON}`"
                     )
                 else:
@@ -273,7 +274,7 @@ async def afk_on_pm(sender):
                 if USERS[sender.sender_id] % randint(2, 4) == 0:
                     if AFKREASON:
                         await sender.reply(
-                            f"Maaf Saya Masih OFFLINE Sejak {afk_since}.\
+                            f"`Maaf {ALIVE_NAME} Masih OFFLINE Sejak` {afk_since}.\
                             \nKarena: `{AFKREASON}`"
                         )
                     else:
