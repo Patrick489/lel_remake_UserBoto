@@ -8,7 +8,7 @@ import asyncio
 @register(outgoing=True, pattern='^.santet(?: |$)(.*)')
 async def typewriter(typew):
 	message = typew.pattern_match.group(1)
-	await typew.edit("`Sedang Menyantet Korban...\nMampus Kau Anjeng!`")
+	await typew.edit("`Sedang Menyantet Korban...\nMampus kau!`")
 	sleep(5)
 	await typew.edit("`Sedang Mencari Informasi Korban...\n50%!`")
 	sleep(5)
@@ -319,7 +319,7 @@ async def typewriter(typew):
 	sleep(5)
 	await typew.edit("`Tapi Boong, YAHHAA HAYYUK!`")
 	sleep(5)
-	await typew.edit("`Tertipu Kamu Bangsat!`")
+	await typew.edit("`Tertipu Kamu Bangsat Awoawokawok`")
 	# I did it for two hours :D just ctrl+c - crtl+v
 
 
