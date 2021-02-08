@@ -101,7 +101,7 @@ async def kang(args):
 
         u_name = user.username
         f_name = user.first_name
-        packname = f"sticker_by_{u_name}_{pack}"
+        packname = f"sticker_by_{u_name}_{pack}X"
         custom_packnick = f"{custompack}" or f"{f_name}"
         packnick = f"{custom_packnick} Vol.{pack}"
         cmd = "/newpack"
@@ -134,8 +134,8 @@ async def kang(args):
                 x = await conv.get_response()
                 while "120" in x.text:
                     pack += 1
-                    packname = f"sticker_by_{u_name}_{pack}"
-                    packnick = f"{custom_packnick}"
+                    packname = f"sticker_by_{u_name}_{pack}X"
+                    packnick = f"{custom_packnick} Vol.{pack}"
                     await args.edit(
                         "`Switching to Pack "
                         + str(pack)
@@ -181,8 +181,9 @@ async def kang(args):
                         # Ensure user doesn't get spamming notifications
                         await bot.send_read_acknowledge(conv.chat_id)
                         return await args.edit(
-                            "`Sticker Sukses Dibuat!`"
-                            f"\n  **[KLIK DISINI](t.me/addstickers/{packname})** \nUntuk Menggunakan Sticker",
+                            "`Sticker ditambahkan ke pack yang berbeda !"
+                            "\nIni pack yang baru saja kamu buat!"
+                            f"\nKlik [disini](t.me/addstickers/{packname}) untuk liat pack kamu",
                             parse_mode="md",
                         )
                 if is_anim:
@@ -250,7 +251,7 @@ async def kang(args):
 
         await args.edit(
             "`Sticker Sukses Dibuat!`"
-            f"\n  **[KLIK DISINI](t.me/addstickers/{packname})** \nUntuk Menggunakan Sticker",
+            f"\n     **[KLIK DISINI](t.me/addstickers/{packname})** \nUntuk Menggunakan Sticker",
             parse_mode="md",
         )
 
