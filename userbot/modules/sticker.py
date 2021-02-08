@@ -135,7 +135,7 @@ async def kang(args):
                 while "120" in x.text:
                     pack += 1
                     packname = f"sticker_by_{u_name}_{pack}X"
-                    packnick = f"{custom_packnick} Vol.{pack}"
+                    packnick = f"{custom_packnick}"
                     await args.edit(
                         "`Switching to Pack "
                         + str(pack)
