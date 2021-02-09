@@ -303,7 +303,7 @@ async def typewriter(typew):
 
 CMD_HELP.update({
     "lord":
-    "`.bulan` ; `.hati` ; `.bernyanyi`\
+    "`.bulan` ; `.bernyanyi`\
     \nUsage: liat aja.\
     \n\n`.helikopter` ; `.tank` ; `.tembak`\n`.bundir`\
     \nUsage: liat sendiri\
