@@ -8,11 +8,11 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
 
 
-@register(outgoing=True, pattern='^S|s(?: |$)(.*)')
+@register(outgoing=True, pattern='^.w(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(0)
-    await typew.edit("/protecc quetzalcoatl jinako chevalier artoria qin rhyme mata shiki yi medb osakabehime kiyohime Nightingale yu ke Hokusai Carmilla Mysterious Mae drake europa boudica chacha circe medea murasaki kiara ishtar jeanne jane bradamante brynhildr tomoe gozen irisviel von katou medusa parvati orion stheno euryale nero kingprotea hassan yang abigail illyasviel ereshkigal bb charlotte tamamo chiyome minamoto wu helena ibaraki okita oda mash astolfo mordred nitocris gorgon paul benienma mecha elisabeth gray jack marie anastasia passionlip scheherazade semiramis salome lakshmibai valkyrie anne da fujino nagao")
+    await typew.edit("/protecc shuten martha altera Atalante penthesilea quetzalcoatl jinako chevalier artoria qin rhyme mata shiki yi medb osakabehime kiyohime Nightingale yu ke Hokusai Carmilla Mysterious Mae drake europa boudica chacha circe medea murasaki kiara ishtar jeanne jane bradamante brynhildr tomoe gozen irisviel von katou medusa parvati orion stheno euryale nero kingprotea hassan yang abigail illyasviel ereshkigal bb charlotte tamamo chiyome minamoto wu helena ibaraki okita oda mash astolfo mordred nitocris gorgon paul benienma mecha elisabeth gray jack marie anastasia passionlip scheherazade semiramis salome lakshmibai valkyrie anne da fujino nagao")
 # Owner @erruuu - @salama219
 
 
@@ -24,7 +24,7 @@ async def typewriter(typew):
 # Owner @erruuu - @salama219
 
 
-@register(outgoing=True, pattern='^h(?: |$)(.*)')
+@register(outgoing=True, pattern='^.h(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(0)
