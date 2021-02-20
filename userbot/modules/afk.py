@@ -12,9 +12,9 @@ from userbot import (  # noqa pylint: disable=unused-import isort:skip
     BOTLOG,
     BOTLOG_CHATID,
     CMD_HELP,
+    ALIVE_NAME,
     COUNT_MSG,
     ISAFK,
-    ALIVE_NAME,
     PM_AUTO_BAN,
     USERS,
     PM_AUTO_BAN,
@@ -25,9 +25,9 @@ from userbot.events import register
 # ========================= CONSTANTS ============================
 AFKSTR = [
     "`#AFK\n Maaf Boss {ALIVE_NAME} Sedang OFFLINE!!`",
-    "`#AFK\n Maaf Boss {ALIVE_NAME} Sedang OFFLINE\n Tolong Tunggu Sampai {ALIVE_NAME} Online!!",
-    "`#AFK\n {ALIVE_NAME} Sedang OFFLINE\n Jangan Ganggu !!!!!`",
-    "`#AFK\n Maaf Boss {ALIVE_NAME} Sedang OFFLINE !!`",
+    "`#AFK\n Maaf Boss {ALIVE_NAME} Sedang OFFLINE\n Tolong Tunggu Sampai {ALIVE_NAME}!!",
+    "`#AFK\n {ALIVE_NAME} Sedang OFFLINE\n Jangan Spam !!!!!`",
+    "`#AFK\n Maaf Boss {ALIVE_NAME} Sedang OFFLINE!!`",
 ]
 
 
@@ -243,7 +243,7 @@ async def afk_on_pm(sender):
                 afk_since = f"`{int(seconds)}dtk`"
             if sender.sender_id not in USERS:
                 if AFKREASON:
-                    await sender.reply(f"Maaf {ALIVE_NAME} Sedang `OFFLINE` Sekarang \nKarena: `{AFKREASON}`` \
+                    await sender.reply(f"Maaf {ALIVE_NAME} Sedang `OFFLINE` Sekarang \nKarena: `{AFKREASON}` \
                         \nSejak `{afk_since}` Yg Lalu")
                 else:
                     await sender.reply(str(choice(AFKSTR)))
