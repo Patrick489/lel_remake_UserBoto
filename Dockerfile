@@ -1,5 +1,5 @@
 # We're using Ubuntu 20.10
-FROM xnewbie/docker:groovy
+FROM xnewbie/xbot:groovy
 
 #
 # Clone repo and prepare working directory
@@ -9,6 +9,6 @@ RUN mkdir /root/userbot/.bin
 WORKDIR /root/userbot
 
 #Install python requirements
-RUN pip3 install -r https://raw.githubusercontent.com/https://github.com/Neko-chan1/lel_remake_UserBoto/x-sql-extended/requirements.txt -U
+RUN pip3 install -r https://raw.githubusercontent.com/Neko-chan1/lel_remake_UserBoto/x-sql-extended/requirements.txt
 
 CMD ["python3","-m","userbot"]
