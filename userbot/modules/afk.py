@@ -166,7 +166,7 @@ async def mention_afk(mention):
                 afk_since = f"`{int(seconds)}dtk`"
             if mention.sender_id not in USERS:
                 if AFKREASON:
-                    await mention.reply(f"{ALIVE_NAME} `OFFLINE` Sekarang \nKarena: `{AFKREASON}` \
+                    await mention.reply(f"`{ALIVE_NAME}` `Sedang OFFLINE` `Sekarang \nKarena`: `{AFKREASON}` \
                         \nSejak `{afk_since}` Yg Lalu.")
                 else:
                     await mention.reply(str(choice(AFKSTR)))
@@ -175,7 +175,7 @@ async def mention_afk(mention):
             elif mention.sender_id in USERS:
                 if USERS[mention.sender_id] % randint(2, 4) == 0:
                     if AFKREASON:
-                        await mention.reply(f"{ALIVE_NAME} `OFFLINE` Sekarang \nKarena: `{AFKREASON}` \
+                        await mention.reply(f"`{ALIVE_NAME}` `Sedang OFFLINE` `Sekarang \nKarena`: `{AFKREASON}` \
                         \nSejak `{afk_since}` Yg Lalu.")
                     else:
                         await mention.reply(str(choice(AFKSTR)))
