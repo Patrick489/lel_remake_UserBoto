@@ -4,11 +4,11 @@ FROM xnewbie/docker:groovy
 #
 # Clone repo and prepare working directory
 #
-RUN git clone -b sql-extended https://github.com/Neko-chan1/lel_remake_UserBoto /root/userbot
+RUN git clone -b x-sql-extended https://github.com/Neko-chan1/lel_remake_UserBoto /root/userbot
 RUN mkdir /root/userbot/.bin
 WORKDIR /root/userbot
 
 #Install python requirements
-RUN pip3 install -r https://raw.githubusercontent.com/https://github.com/Neko-chan1/lel_remake_UserBoto/sql-extended/requirements.txt -U
+RUN pip3 install -r https://raw.githubusercontent.com/https://github.com/Neko-chan1/lel_remake_UserBoto/x-sql-extended/requirements.txt -U
 
 CMD ["python3","-m","userbot"]
