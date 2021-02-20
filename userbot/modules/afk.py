@@ -167,7 +167,7 @@ async def mention_afk(mention):
             if mention.sender_id not in USERS:
                 if AFKREASON:
                     await mention.reply(f"`{ALIVE_NAME}` `Sedang OFFLINE` `Sekarang \nKarena`: `{AFKREASON}` \
-                        \nSejak `{afk_since}` Yg Lalu.")
+                        \n`Sejak {afk_since} Yg Lalu`.")
                 else:
                     await mention.reply(str(choice(AFKSTR)))
                 USERS.update({mention.sender_id: 1})
@@ -176,7 +176,7 @@ async def mention_afk(mention):
                 if USERS[mention.sender_id] % randint(2, 4) == 0:
                     if AFKREASON:
                         await mention.reply(f"`{ALIVE_NAME}` `Sedang OFFLINE` `Sekarang \nKarena`: `{AFKREASON}` \
-                        \nSejak `{afk_since}` Yg Lalu.")
+                        \n`Sejak {afk_since} Yg Lalu`.")
                     else:
                         await mention.reply(str(choice(AFKSTR)))
                     USERS[mention.sender_id] = USERS[mention.sender_id] + 1
@@ -243,8 +243,8 @@ async def afk_on_pm(sender):
                 afk_since = f"`{int(seconds)}dtk`"
             if sender.sender_id not in USERS:
                 if AFKREASON:
-                    await sender.reply(f"Maaf {ALIVE_NAME} Sedang `OFFLINE` Sekarang \nKarena: `{AFKREASON}` \
-                        \nSejak `{afk_since}` Yg Lalu")
+                    await sender.reply(f"`Maaf {ALIVE_NAME} Sedang` `OFFLINE` `Sekarang \nKarena`: `{AFKREASON}` \
+                        \n`Sejak {afk_since} Yg Lalu`")
                 else:
                     await sender.reply(str(choice(AFKSTR)))
                 USERS.update({sender.sender_id: 1})
@@ -252,8 +252,8 @@ async def afk_on_pm(sender):
             elif apprv and sender.sender_id in USERS:
                 if USERS[sender.sender_id] % randint(2, 4) == 0:
                     if AFKREASON:
-                        await sender.reply(f"Maaf {ALIVE_NAME} Sedang `OFFLINE` Sekarang \nKarena: `{AFKREASON}` \
-                        \nSejak `{afk_since}` Yg Lalu")
+                        await sender.reply(f"`Maaf {ALIVE_NAME} Sedang` `OFFLINE` `Sekarang \nKarena`: `{AFKREASON}` \
+                        \n`Sejak {afk_since} Yg Lalu`")
                     else:
                         await sender.reply(str(choice(AFKSTR)))
                     USERS[sender.sender_id] = USERS[sender.sender_id] + 1
