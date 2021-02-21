@@ -70,7 +70,6 @@ pkg install wget;wget https://raw.githubusercontent.com/meareyou/lel_remake_User
 *   [Sahyam2019](https://github.com/sahyam2019/oub-remix) - oub-remix
 *   [TeamUserge](https://github.com/UsergeTeam/Userge) - Userge
 *   [mry](https://gihub.com/meareyou/lel_remake_UserBoto) - 
-*   [alvin](https://github.com/Zora24/Lord-Userbot) - Lord-Userbot
 *   AND OTHER
 
 ## License
