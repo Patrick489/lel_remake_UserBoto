@@ -70,10 +70,10 @@ async def locks(event):
         what = "Semuanya"
     else:
         if not input_str:
-            await event.edit("`Mohon Maaf, Apa Yang Harus Saya Kunci Tod?`")
+            await event.edit("`Apa Yang Harus Saya Kunci Tod?`")
             return
         else:
-            await event.edit(f"`Jenis Yang Mau Lo Kunci Tidak Valid Tod` `{input_str}`")
+            await event.edit(f"`Yang Mau Lo Kunci Tidak Valid Tod` `{input_str}`")
             return
 
     lock_rights = ChatBannedRights(
