@@ -105,8 +105,8 @@ async def permitpm(event):
 
             if COUNT_PM[event.chat_id] > 4:
                 await event.respond(
-                    "`You were spamming my PM, which I didn't like.`\n"
-                    "`I Wouldn't let you to chat me again until further notice`\n"
+                    "`Anda melakukan spamming pada PM saya, yang tidak saya sukai.`\n"
+                    "`Saya tidak akan membiarkan Anda mengobrol dengan saya lagi sampai pemberitahuan lebih lanjut`\n"
                     "`Bye`"
                 )
 
@@ -298,7 +298,7 @@ async def blockpm(block):
         aname = replied_user.id
         name0 = str(replied_user.first_name)
         await block.client(BlockRequest(aname))
-        await block.edit("`You've been blocked!`")
+        await block.edit("`Anda telah diblokir!`")
         uid = replied_user.id
     else:
         await block.client(BlockRequest(block.chat_id))
@@ -329,7 +329,7 @@ async def unblockpm(unblock):
         replied_user = await unblock.client.get_entity(reply.from_id)
         name0 = str(replied_user.first_name)
         await unblock.client(UnblockRequest(replied_user.id))
-        await unblock.edit("`You have been unblocked.`")
+        await unblock.edit("`Anda telah dibebaskan.`")
 
     if BOTLOG:
         await unblock.client.send_message(
