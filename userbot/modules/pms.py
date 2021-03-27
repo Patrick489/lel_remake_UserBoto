@@ -35,16 +35,16 @@ DEF_UNAPPROVED_MSG = (
     "╾─────────────────────╼\n\n"
 
     "╭━━━━━━━━━━━━━━━━━━━━━╮\n"
-    " Mohon untuk tidak\n"
-    " melakukan spam chat\n"
-    " Atau Saya Akan Otomatis\n"
-    " Mereport & Block Kamu\n"
-    " Silahkan Tungguu Sampai\n"
+       " Mohon untuk tidak\n"
+      " melakukan spam chat\n"
+     " Atau Saya Akan Otomatis\n"
+     " Mereport & Block Kamu\n"
+     " Silahkan Tungguu Sampai\n"
     f" `{DEFAULTUSER}` Menerima Pesanmu\n"
     "╰━━━━━━━━━━━━━━━━━━━━━╯\n\n"
 
     "╾─────────────────────╼\n"
-    "TERIMAKASIH\n"
+          "TERIMAKASIH\n"
     "─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇\n"
     f"- ©Bot Assisten `{DEFAULTUSER}`\n"
     "- NGGAK MELAYANI BER BER ")
