@@ -303,7 +303,7 @@ async def blockpm(block):
     else:
         await block.client(BlockRequest(block.chat_id))
         aname = await block.client.get_entity(block.chat_id)
-        await block.edit("`Anda telah diblokir! \n bye..`")
+        await block.edit("`Anda telah diblokir!`")
         name0 = str(aname.first_name)
         uid = block.chat_id
 
