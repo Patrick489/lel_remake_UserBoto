@@ -44,7 +44,7 @@ DEF_UNAPPROVED_MSG = (
     "╰━━━━━━━━━━━━━━━━━━━━━╯\n\n"
 
     "╾─────────────────────╼\n"
-    "   TERIMAKASIH\n"
+    "TERIMAKASIH\n"
     "─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇\n"
     f"- ©Bot Assisten `{DEFAULTUSER}`\n"
     "- NGGAK MELAYANI BER BER ")
