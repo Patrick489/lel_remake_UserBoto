@@ -15,7 +15,7 @@ from userbot import CMD_HELP, bot
 async def _(event):
     reply = await event.get_reply_message()
     if not (reply and (reply.media)):
-        await event.edit("`Mohon Balas Ke Sticker`")
+        await event.edit("`Mohon Balas Ke Sticker Lord`")
         return
     xx = await event.edit("`Memproses...`")
     ik = await bot.download_media(reply)
