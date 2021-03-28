@@ -1,3 +1,8 @@
+# Ported From Cat Userbot For Lord Userbot By Alvin/LiuAlvinas # Jangan Hapus # Jangan Ubah
+# Based On Plugins
+# Alvin Ganteng
+
+
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot import CMD_HELP, bot
 from userbot.events import register
