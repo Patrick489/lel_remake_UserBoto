@@ -10,7 +10,7 @@ async def _(event):
         return
     danish = event.pattern_match.group(1)
     chat = "@Carol5_bot"
-    await event.edit("Mencari kartu kredet gaess 😅😁...")
+    await event.edit("Wait for result...")
     async with event.client.conversation(chat) as conv:
         try:
             response = conv.wait_event(
@@ -115,13 +115,13 @@ async def _(event):
 CMD_HELP.update(
     {
         "binner": ">`.bin`"
-        "\nUsage: Buat bin cc njing"
+        "\nUsage: Bin For Bin"
         "\n\n>`.vbv`"
-        "\nUsage: Gatau dah vcs kali xixixi."
+        "\nUsage: vbv VBV check"
         "\n\n>`.key`"
-        "\nUsage: Kunci kayanya gatau kunci surga mungkin."
+        "\nUsage: key for check sk_live key"
         "\n\n>`.iban`"
-        "\nUsage: biasa nya yang ada ban ban ny itu banned"
+        "\nUsage: iban Iban Check"
 
 
     }
