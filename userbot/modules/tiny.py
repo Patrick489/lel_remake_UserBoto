@@ -19,9 +19,9 @@ from userbot import CMD_HELP, bot
 async def ultiny(event):
     reply = await event.get_reply_message()
     if not (reply and (reply.media)):
-        await event.edit("`Mohon Balas Ke Sticker`")
+        await event.edit("`Lord, Mohon Balas Ke Sticker`")
         return
-    xx = await event.edit("`Memproses....`")
+    xx = await event.edit("`Memproses Tiny....`")
     ik = await bot.download_media(reply)
     im1 = Image.open("LordUserbot/lorduserbot.png")
     if ik.endswith(".tgs"):
