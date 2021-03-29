@@ -1,27 +1,31 @@
-# Port By LiuAlvinas/Alvin For Lord Userbot From Ulttoid
+# Port By LiuAlvinas/Alvin For Lord Userbot From Ultroid, Thanks
 # Based Plugins
+# Fixed By ManusiaRakitann/Koala
 # Dont Remove
+
 
 # Alvin Ganteng
 
 from PIL import Image
-
+import cv2
 import os
 from userbot.events import register
 from userbot import CMD_HELP, bot
 
+# Ngapain Kesini Ajg Hus
 
-@register(outgoing=True, pattern=r"^\.tiny(?: |$)(.*)")
-async def _(event):
+
+@register(outgoing=True, pattern="^.tiny(?: |$)(.*)", disable_errors=True)
+async def ultiny(event):
     reply = await event.get_reply_message()
     if not (reply and (reply.media)):
         await event.edit("`Mohon Balas Ke Sticker`")
         return
-    xx = await event.edit("`Memproses...`")
-    ik = await bot.download_media(reply_message.media)
-    im1 = Image.open("LordUserBot/lorduserbot.png")
+    xx = await event.edit("`Memproses....`")
+    ik = await bot.download_media(reply)
+    im1 = Image.open("LordUserbot/lorduserbot.png")
     if ik.endswith(".tgs"):
-        await bot.client.download_media(reply_message, "ult.tgs")
+        await event.client.download_media(reply, "ult.tgs")
         os.system("lottie_convert.py ult.tgs json.json")
         json = open("json.json", "r")
         jsn = json.read()
@@ -78,7 +82,7 @@ async def _(event):
         back_im.save("o.webp", "WEBP", quality=95)
         file = "o.webp"
         os.remove("k.png")
-    await bot.client.send_file(event.chat_id, file, reply_to=event.reply_to_msg_id)
+    await event.client.send_file(event.chat_id, file, reply_to=event.reply_to_msg_id)
     await xx.delete()
     os.remove(file)
     os.remove(ik)
