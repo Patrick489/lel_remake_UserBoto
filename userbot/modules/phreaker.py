@@ -11,7 +11,7 @@ from userbot import bot, CMD_HELP
 from userbot.events import register
 
 
-@register(outgoing=True, pattern="gen(?: |$)(.*)"))
+@register(outgoing=True, pattern=r"^\.gen(?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -34,7 +34,7 @@ async def _(event):
             await event.client.delete_messages(conv.chat_id, [jemboed.id, asu.id])
 
 
-@register(outgoing=True, pattern="chk(?: |$)(.*)"))
+@register(outgoing=True, pattern=r"^\.chk(?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -57,7 +57,7 @@ async def _(event):
             await event.client.delete_messages(conv.chat_id, [jemboed.id, asu.id])
 
 
-@register(outgoing=True, pattern="bin(?: |$)(.*)"))
+@register(outgoing=True, pattern=r"^\.bin(?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -80,7 +80,7 @@ async def _(event):
             await event.client.delete_messages(conv.chat_id, [jemboed.id, asu.id])
 
 
-@register(outgoing=True, pattern="skey(?: |$)(.*)"))
+@register(outgoing=True, pattern=r"^\.skey(?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -103,7 +103,7 @@ async def _(event):
             await event.client.delete_messages(conv.chat_id, [jemboed.id, asu.id])
 
 
-@register(outgoing=True, pattern="nmap(?: |$)(.*)"))
+@register(outgoing=True, pattern=r"^\.nmap(?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -123,7 +123,7 @@ async def _(event):
             await event.client.delete_messages(conv.chat_id, [jemboed.id, asu.id])
 
 
-@register(outgoing=True, pattern="subd(?: |$)(.*)"))
+@register(outgoing=True, pattern=r"^\.subd(?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -143,7 +143,7 @@ async def _(event):
             await event.client.delete_messages(conv.chat_id, [jemboed.id, asu.id])
 
 
-@register(outgoing=True, pattern="cekhttp(?: |$)(.*)"))
+@register(outgoing=True, pattern=r"^\.cekhttp(?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
         return
