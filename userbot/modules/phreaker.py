@@ -5,14 +5,13 @@
 #
 # Created By @ximfine
 
+from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot import bot, CMD_HELP
-import asyncio
-from userbot.events import xubot_cmd
-from userbot import CUSTOM_CMD as xcm
+from userbot.events import register
 
 
-@bot.on(xubot_cmd(outgoing=True, pattern="gen(?: |$)(.*)"))
+@register(outgoing=True, pattern="gen(?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -35,7 +34,7 @@ async def _(event):
             await event.client.delete_messages(conv.chat_id, [jemboed.id, asu.id])
 
 
-@bot.on(xubot_cmd(outgoing=True, pattern="chk(?: |$)(.*)"))
+@register(outgoing=True, pattern="chk(?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -58,7 +57,7 @@ async def _(event):
             await event.client.delete_messages(conv.chat_id, [jemboed.id, asu.id])
 
 
-@bot.on(xubot_cmd(outgoing=True, pattern="bin(?: |$)(.*)"))
+@register(outgoing=True, pattern="bin(?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -81,7 +80,7 @@ async def _(event):
             await event.client.delete_messages(conv.chat_id, [jemboed.id, asu.id])
 
 
-@bot.on(xubot_cmd(outgoing=True, pattern="skey(?: |$)(.*)"))
+@register(outgoing=True, pattern="skey(?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -104,7 +103,7 @@ async def _(event):
             await event.client.delete_messages(conv.chat_id, [jemboed.id, asu.id])
 
 
-@bot.on(xubot_cmd(outgoing=True, pattern="nmap(?: |$)(.*)"))
+@register(outgoing=True, pattern="nmap(?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -124,7 +123,7 @@ async def _(event):
             await event.client.delete_messages(conv.chat_id, [jemboed.id, asu.id])
 
 
-@bot.on(xubot_cmd(outgoing=True, pattern="subd(?: |$)(.*)"))
+@register(outgoing=True, pattern="subd(?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -144,7 +143,7 @@ async def _(event):
             await event.client.delete_messages(conv.chat_id, [jemboed.id, asu.id])
 
 
-@bot.on(xubot_cmd(outgoing=True, pattern="cekhttp(?: |$)(.*)"))
+@register(outgoing=True, pattern="cekhttp(?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -167,19 +166,19 @@ async def _(event):
 CMD_HELP.update({
     "phreaker":
     f"\n╭━━━━━━━━━━━━━━━━━━━╮\
-\n  `{xcm}gen <bin>`\
+\n  `.gen <bin>`\
 \n   Usage: to generate cc with bin.\
-\n\n  `{xcm}chk <cc>`\
+\n\n  `.chk <cc>`\
 \n   Usage: to check respond cc.\
-\n\n  `{xcm}bin <bin number>`\
+\n\n  `.bin <bin number>`\
 \n   Usage: to cek bin information.\
-\n\n  `{xcm}skey <SK-KEY>`\
+\n\n  `.skey <SK-KEY>`\
 \n   Usage: to check skkey respond.\
-\n\n  `{xcm}nmap <domain hosts>`\
+\n\n  `.nmap <domain hosts>`\
 \n   Usage: to get info bug/host.\
-\n\n  `{xcm}subd <domain hosts>`\
+\n\n  `.subd <domain hosts>`\
 \n   Usage: to get subdomain bug/host.\
-\n\n  `{xcm}cekhttp <domain hosts>`\
+\n\n  `.cekhttp <domain hosts>`\
 \n   Usage: to cek respons bug/host.\
 \n╰━━━━━━━━━━━━━━━━━━━╯"
 })
