@@ -164,9 +164,8 @@ async def _(event):
 
 
 CMD_HELP.update({
-    "xphreaker":
-    "**HELP FOR XPHREAKER**\
-\n╭━━━━━━━━━━━━━━━━━━━╮\
+    "phreaker":
+    "\n╭━━━━━━━━━━━━━━━━━━━╮\
 \n  `.gen <bin>`\
 \n   Usage: to generate cc with bin.\
 \n\n  `.chk <cc>`\
