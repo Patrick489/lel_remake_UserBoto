@@ -5,8 +5,8 @@
 #
 # Created By @ximfine
 
-from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
+import asyncio
 from userbot import bot, CMD_HELP
 from userbot.events import register
 
@@ -164,8 +164,9 @@ async def _(event):
 
 
 CMD_HELP.update({
-    "phreaker":
-    f"\n╭━━━━━━━━━━━━━━━━━━━╮\
+    "xphreaker":
+    "**HELP FOR XPHREAKER**\
+\n╭━━━━━━━━━━━━━━━━━━━╮\
 \n  `.gen <bin>`\
 \n   Usage: to generate cc with bin.\
 \n\n  `.chk <cc>`\
