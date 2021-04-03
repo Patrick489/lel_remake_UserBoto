@@ -8,7 +8,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
 
 
-@register(outgoing=True, pattern='^.PP(?: |$)(.*)')
+@register(outgoing=True, pattern='^.P(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(1)
@@ -20,7 +20,7 @@ async def typewriter(typew):
 # Owner @Si_Dian + @Crypto08
 
 
-@register(outgoing=True, pattern='^.pp(?: |$)(.*)')
+@register(outgoing=True, pattern='^.p(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(1)
@@ -32,7 +32,7 @@ async def typewriter(typew):
 # Owner @Si_Dian + @Crypto08
 
 
-@register(outgoing=True, pattern='^.LL(?: |$)(.*)')
+@register(outgoing=True, pattern='^.L(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(1)
@@ -44,7 +44,7 @@ async def typewriter(typew):
 # Owner @Si_Dian + @Crypto08
 
 
-@register(outgoing=True, pattern='^.ll(?: |$)(.*)')
+@register(outgoing=True, pattern='^.l(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(1)
@@ -58,8 +58,8 @@ async def typewriter(typew):
 
 CMD_HELP.update({
     "salam":
-    "`.pp/PP`\
+    "`.p/P`\
 \nUsage: Untuk Memberi salam.\
-\n\n`.LL/.ll`\
+\n\n`.L/.l`\
 \nUsage: Untuk Menjawab Salam."
 })
