@@ -219,14 +219,14 @@ async def typewriter(typew):
 # Lord
 CMD_HELP.update({
     "animasi":
-    "`.nah` ; `.huh` ; `.owner`\
+    "`.hua` ; `.huh`\
     \nUsage: cobain.\
-    \n\n`.hai` ; `.kntl`\
-    \nUsage: animasi.\
-    \n\n`.alay`\
-    \nUsage: animasi.\
-    \n\n`.hua`\
-    \nUsage: nangis.\
     \n\n`.ceritacinta` ; `.canda`\
+    \nUsage: animasi.\
+    \n\n`.nah` ; '.owner'\
+    \nUsage: animasi.\
+    \n\n`.hai` ; '.kntl'\
+    \nUsage: liat aja.\
+    \n\n`.alay`\
     \nUsage: liat sendiri"
 })
