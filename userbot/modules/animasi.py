@@ -171,6 +171,49 @@ async def _(event):
             await asyncio.sleep(animation_interval)
 
             await event.edit(animation_chars[i % 6])
+
+
+@register(outgoing=True, pattern='^.hai(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    sleep(1)
+    await typew.edit("**Hai ,  Assalamualaikum**")
+    sleep(1)
+    await typew.edit("Kalian Nungguin aku gak??")
+    sleep(1)
+    await typew.edit("Ih ga mau🤢")
+    sleep(1)
+    await typew.edit("gasukaa😫")
+    sleep(1)
+    await typew.edit("__GELAYY__🤮")
+    
+   
+@register(outgoing=True, pattern='^.kntl(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    sleep(1)
+    await typew.edit("Tau kh kalian wahai tuan-tuan??")
+    sleep(1)
+    await typew.edit("se**KONT0L** **K0NTOL** nya si **K0NTOL**")
+    sleep(1)
+    await typew.edit("lebih **KONTOL** lagi")              
+    sleep(1)
+    await typew.edit("kalian **KONTOL**")
+
+
+@register(outgoing=True, pattern='^.alay(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    sleep(1)
+    await typew.edit("eh kamu, iya kamu")
+    sleep(1)
+    await typew.edit("**ALAY** bnget sih")
+    sleep(1)
+    await typew.edit("spam bot mulu")
+    sleep(1)
+    await typew.edit("baru jadi userbot ya?? xixixi")
+    sleep(1)
+    await typew.edit("pantes **NORAK**")
 # Alvin Imut
 # Alvin Gans
 # Lord
@@ -178,9 +221,9 @@ CMD_HELP.update({
     "animasi":
     "`.nah` ; `.huh` ; `.owner`\
     \nUsage: cobain.\
-    \n\n`.bunga` ; `.buah`\
+    \n\n`.hai` ; `.kntl`\
     \nUsage: animasi.\
-    \n\n`.waktu`\
+    \n\n`.alay`\
     \nUsage: animasi.\
     \n\n`.hua`\
     \nUsage: nangis.\
