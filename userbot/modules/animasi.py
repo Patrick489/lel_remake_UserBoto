@@ -223,9 +223,9 @@ CMD_HELP.update({
     \nUsage: cobain.\
     \n\n`.ceritacinta` ; `.canda`\
     \nUsage: animasi.\
-    \n\n`.nah` ; '.owner'\
+    \n\n`.nah` ; `.owner`\
     \nUsage: animasi.\
-    \n\n`.hai` ; '.kntl'\
+    \n\n`.hai` ; `.kntl`\
     \nUsage: liat aja.\
     \n\n`.alay`\
     \nUsage: liat sendiri"
