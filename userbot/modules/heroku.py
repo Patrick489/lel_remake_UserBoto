@@ -277,7 +277,7 @@ async def dyno_usage(dyno):
                 "\n ◐━─━─━─━─━──━─━─━─━─━◐\n"
                 "-> `Sisa Dyno Bulan Ini`:\n"
                 f"    •1000 jam - 0 menit  "
-                f"-  100%**\n"
+                f"-  100%\n"
                 "╰━━━━━━━━━━━━━━━━━━━━╯"
             )
             await asyncio.sleep(20)
