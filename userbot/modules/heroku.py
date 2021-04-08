@@ -215,6 +215,73 @@ async def _(dyno):
     return os.remove("logs.txt")
 
 
+@register(outgoing=True, pattern=r"^.usange(?: |$)")
+async def dyno_usage(dyno):
+    """
+        Get your account Dyno Usage
+    """
+    await dyno.edit("`Mendapatkan Ingfo Dyno`")
+    useragent = (
+        'Mozilla/5.0 (Linux; Android 10; SM-G975F) '
+        'AppleWebKit/537.36 (KHTML, like Gecko) '
+        'Chrome/81.0.4044.117 Mobile Safari/537.36'
+    )
+    user_id = Heroku.account().id
+    headers = {
+        'User-Agent': useragent,
+        'Authorization': f'Bearer {HEROKU_API_KEY}',
+        'Accept': 'application/vnd.heroku+json; version=3.account-quotas',
+    }
+    path = "/accounts/" + user_id + "/actions/get-quota"
+    async with aiohttp.ClientSession() as session:
+        async with session.get(heroku_api + path, headers=headers) as r:
+            if r.status != 200:
+                await dyno.client.send_message(
+                    dyno.chat_id,
+                    f"`{r.reason}`",
+                    reply_to=dyno.id
+                )
+                await dyno.edit("`Share Lok Tak Parani...`")
+                return False
+            result = await r.json()
+            quota = result['account_quota']
+            quota_used = result['quota_used']
+
+            """ - User Quota Limit and Used - """
+            remaining_quota = quota - quota_used
+            percentage = math.floor(remaining_quota / quota * 100)
+            minutes_remaining = remaining_quota / 60
+            hours = math.floor(minutes_remaining / 60)
+            minutes = math.floor(minutes_remaining % 60)
+
+            """ - User App Used Quota - """
+            Apps = result['apps']
+            for apps in Apps:
+                if apps.get('app_uuid') == app.id:
+                    AppQuotaUsed = apps.get('quota_used') / 60
+                    AppPercentage = math.floor(
+                        apps.get('quota_used') * 100 / quota)
+                    break
+            else:
+                AppQuotaUsed = 0
+                AppPercentage = 0
+
+            AppHours = math.floor(AppQuotaUsed / 60)
+            AppMinutes = math.floor(AppQuotaUsed % 60)
+
+            await dyno.edit(
+                "**Penggunaan Dyno**:\n\n"
+                f"❏ __**Penggunaan Dyno** **{app.name}**:__\n"
+                f"    •__0 Jam - "
+                f"0%__\n\n"
+                "❏ __**Sisa Dyno Bulan Ini**:__\n"
+                f"    •__1000 Jam - 100%__"
+            )
+            await asyncio.sleep(20)
+            await dyno.delete()
+            return True
+
+
 CMD_HELP.update({"heroku": ">.`usage`"
                  "\nUsage: Check your heroku dyno hours remaining"
                  "\n\n>`.set var <NEW VAR> <VALUE>`"
