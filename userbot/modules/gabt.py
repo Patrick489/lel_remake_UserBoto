@@ -299,9 +299,20 @@ async def typewriter(typew):
     await typew.edit("`Semoga engkau baik baik saja meski tak kumiliki.`")
 # Create by myself @localheart
 
+@register(outgoing=True, pattern='^.sadboy(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    sleep(2)
+    await typew.edit("`Pertama-tama kamu cantik`")
+    sleep(2)
+    await typew.edit("`Kedua kamu manis`")
+    sleep(1)
+    await typew.edit("`Dan yang terakhir adalah kamu bukan jodohku`")
+# Create by myself @localheart
+
 CMD_HELP.update({
     "sad":
-    "`.ohayou`\
+    "`.ohayou` ; `.sadboy`\
     \nUsage: ntahlah gabut doang.\
     \n\n`.syg`\
     \nUsage: buat bercanda\
