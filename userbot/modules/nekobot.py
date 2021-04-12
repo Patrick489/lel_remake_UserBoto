@@ -225,9 +225,59 @@ async def tweet(event):
     await event.delete()
     await purge()
 
+@register(outgoing=True, pattern=r"^\.ph(?: |$)(.*)")
+async def phcomment(event):
+    try:
+        await event.edit("`Processing..`")
+        text = event.pattern_match.group(1)
+        reply = await event.get_reply_message()
+        if reply:
+            user = await get_user_from_event(event)
+            if user.last_name:
+                name = user.first_name + " " + user.last_name
+            else:
+                name = user.first_name
+            if text:
+                text = text
+            else:
+                text = str(reply.message)
+        elif text:
+            user = await bot.get_me()
+            if user.last_name:
+                name = user.first_name + " " + user.last_name
+            else:
+                name = user.first_name
+            text = text
+        else:
+            return await event.edit("`Give text..`")
+        try:
+            photo = await event.client.download_profile_photo(
+                user.id,
+                str(user.id) + ".png",
+                download_big=False,
+            )
+            uplded = upload_image(photo)
+        except BaseException:
+            uplded = "https://telegra.ph/file/7d110cd944d54f72bcc84.jpg"
+    except BaseException as e:
+        await purge()
+        return await event.edit(f"`Error: {e}`")
+    img = await phss(uplded, text, name)
+    try:
+        await event.client.send_file(
+            event.chat_id,
+            img,
+            reply_to=event.reply_to_msg_id,
+        )
+    except BaseException:
+        await purge()
+        return await event.edit("`Reply message has no text!`")
+    await event.delete()
+    await purge()
+
 
 CMD_HELP.update(
-    {
+    {   
         "nekobot": ">`.tweet` <username>.<tweet>"
         "\nUsage: Create tweet with custom username.\n\n"
         ">`.trump` <tweet>"
@@ -238,5 +288,7 @@ CMD_HELP.update(
         "\nUsage: Create banner for Change My Mind.\n\n"
         ">`.kanna` <text>"
         "\nUsage: Kanna is writing your text."
+        ">`.ph` <text/reply with or w/o text>"
+        "\nUsage: writing comment on p*rnhub XD"
     }
 )
