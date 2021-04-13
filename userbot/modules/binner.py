@@ -90,7 +90,7 @@ async def _(event):
     await event.edit(f"```Checking SK KEY {query}```")
     async with bot.conversation("@Carol5_bot") as conv:
         try:
-            jemboed = await conv.send_message(f"/bin {query}")
+            jemboed = await conv.send_message(f"/key {query}")
             await asyncio.sleep(10)
             asu = await conv.get_response()
             await bot.send_read_acknowledge(conv.chat_id)
@@ -183,7 +183,7 @@ async def _(event):
     async with bot.conversation("@Carol5_bot") as conv:
         try:
             jemboed = await conv.send_message(f"/au {query}")
-            await asyncio.sleep(10)
+            await asyncio.sleep(12)
             asu = await conv.get_response()
             await bot.send_read_acknowledge(conv.chat_id)
         except YouBlockedUserError:
