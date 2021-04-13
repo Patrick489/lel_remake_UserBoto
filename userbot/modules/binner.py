@@ -216,6 +216,30 @@ async def _(event):
             await event.edit(asu.message)
             await event.client.delete_messages(conv.chat_id, [jemboed.id, asu.id])
 
+CMD_HELP.update({
+    "binner":
+    "\n╭━━━━━━━━━━━━━━━━━━━╮\
+\n  `.gen`\
+\n   Usage: to generate cc with bin.\
+\n\n  `.ss`\
+\n   Usage: Stripity-Stripe Auth.\
+\n\n  `.bin`\
+\n   Usage: to cek bin information.\
+\n\n  `.key`\
+\n   Usage: to check skkey respond.\
+\n\n  `.ch`\
+\n   Usage: Auth CC LIVE OR DEAD.\
+\n\n  `.vbv`\
+\n   Usage: CC CHECKER IF ITS VBV OR NOT.\
+\n\n  `.pp`\
+\n   Usage: Paypal Charge 0.01$.\
+\n\n  `.au`\
+\n   Usage: Auth CC LIVE OR DEAD.\
+\n\n  `.iban`\
+\n   Usage: IBAN Checker.\
+\n╰━━━━━━━━━━━━━━━━━━━╯"
+})
+
 
 
 
